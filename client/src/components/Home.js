@@ -3,8 +3,7 @@ import { useState } from 'react';
 import FormData from 'form-data';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Form,InputGroup} from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
+import {Button,Form,InputGroup} from 'react-bootstrap';
 const ethers = require("ethers")
 
 function Home() {
@@ -411,8 +410,8 @@ function Home() {
       "type": "function"
     }
   ]
-  const ContractAddress = "0x64A2495a87Bbe4EF51dfA26bC15cd31698a303AF"
-
+  const ContractAddress = process.env.REACT_APP_CONTRACT_ADDRESS;
+  console.log(ContractAddress)
 
 
   const handleFile=async (fileToHandle) =>{
@@ -429,8 +428,8 @@ function Home() {
 
     // call the keys from .env
 
-    const API_KEY = '7895543143ac45f0a93b'
-    const API_SECRET = '6c1cfe479adfa1e9b187cd41f60dcc9e1415245d0766f979cfb3420bbc6d18b8'
+    const API_KEY = process.env.REACT_APP_API_KEY
+    const API_SECRET = process.env.REACT_APP_API_SECRET
 
     // the endpoint needed to upload the file
     const url =  `https://api.pinata.cloud/pinning/pinFileToIPFS`
@@ -551,7 +550,7 @@ function Home() {
     {
 
       //  render the hash
-      myipfsHash.length > 0 && <img height='200' src={`https://gateway.pinata.cloud/ipfs/${myipfsHash}`} alt='not loading'/>
+      myipfsHash.length > 0 && <image height='200' src={`https://gateway.pinata.cloud/ipfs/${myipfsHash}`} alt='not loading' thumbnail="true"/>
     }
     </div>
     )
