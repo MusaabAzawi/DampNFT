@@ -38,7 +38,9 @@ function MyNfts() {
     <Row>
     {nfts.map((nft, index) => (
     <Col key={index} xs={6} md={4}>
+
     <Image src={`https://ipfs.io/ipfs/${nft.ipfs_pin_hash}`} thumbnail />
+ 
   </Col>
     ))}
     </Row>
