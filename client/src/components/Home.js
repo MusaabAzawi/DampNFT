@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect,useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FormData from 'form-data';
@@ -468,7 +468,7 @@ function Home() {
   useEffect(() => {
     requestAccount()
   }, [])
-  
+
   async function requestAccount() {
     console.log("requesting Account..");
 
@@ -562,7 +562,7 @@ function Home() {
         //  render the hash
         myipfsHash.length > 0 && <image height='200' src={`https://gateway.pinata.cloud/ipfs/${myipfsHash}`} alt='not loading' thumbnail="true" />
       }
-      
+
     </div>
   )
 }
